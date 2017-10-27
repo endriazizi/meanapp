@@ -1,0 +1,147 @@
+mongodb
+
+custom under C:\ creo folder mongodb
+
+all'interno credo due folder:
+data and log
+
+inside data create a folder called db
+
+C:\mongodb\bin>
+
+
+
+
+c:\mongodb\bin>
+mongod --directoryperdb --dbpath C:\mongodb\data\db --logpath C:\mongodb\log\mongo.log --logappend --rest --install
+2017-10-26T15:48:23.593+0200 I CONTROL  [main] log file "C:\mongodb\log\mongo.log" exists; moved to "C:\mongodb\log\mongo.log.2017-10-26T13-48-23".
+
+START MONGODB works in background:
+net start MongoDB
+
+OPEN MONGO SHELL:
+mongo
+
+SHOW LIST DBS:
+show dbs
+
+CREATE DB:
+use mycustomers
+
+CHECK WHAT DB ARE YOU IN:
+db
+
+{
+	first_name:"Endri",
+	last_name:"Azizi",
+	//array with all mebership user are in
+	memberships:["mem1", mem2"],
+	//object
+	address:{
+			street:"via Torino",
+			city:"Milano"
+	}
+	//array of object
+	contact:[
+			{name:"Brad", relationship:"friend"},
+			{name:"Mario", relationship:"sister"},
+			address:{
+			street:"via Torino",
+			city:"Milano"
+	}
+	]	
+}
+
+CREATE USER FOR DB https://docs.mongodb.com/manual/reference/method/db.createUser/
+
+db.createUser({
+	user: "admin",
+	pwd: "admin",
+	roles: [ "readWrite", "dbAdmin" ]
+});
+
+CREATE COLLECTIONS (similar to tables in relational db)
+db.createCollection('customers');
+
+SEE DB COLLECTIONS
+show collections
+
+INSERT ONE ELEMENT DB
+db.customers.insert({
+	first_name:"Endri",
+	last_name:"Azizi"});
+
+INSERT MULTIPLE ELEMENT DB
+db.customers.insert([
+{
+	first_name:"Lucia",
+	last_name:"Mirto"
+},
+{
+	first_name:"Valentina",
+	last_name:"Angelini"
+},
+{
+	first_name:"Piro",
+	last_name:"Lucci",
+	gender:"male"
+}	
+	]);
+
+SEE ELEMENT INSIDE A COLLECTION:
+db.customers.find();
+
+SEE ELEMENT INSIDE A COLLECTION:
+db.customers.find().pretty();
+
+
+
+
+"# MEAN_IONIC2"
+
+echo "# meanapp" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/endriazizi/meanapp.git
+git push -u origin master
+
+
+$ git config --global user.name "Endri Azizi" $ git config --global user.email endri.azizi@gmail.com
+
+$ git config --list
+
+$ git init
+
+$ git commit -m "Set up the Project and Dependencies, create the Main Server File"
+
+db.customers.insert(
+{
+	first_name:"Endri",
+	last_name:"Azizi",
+	memberships:["mem1", "mem2"],
+	address:{
+			street:"via Torino",
+			city:"Milano"
+	},
+	contact:[
+			{
+			name:"Brad", relationship:"friend", 
+				address:{
+			street:"via Torino",
+			city:"Milano"
+			}
+			},
+			{name:"Mario", relationship:"sister"},
+			{address:{
+			street:"via Torino",
+			city:"Milano"
+			}}
+	]	
+});
+
+
+
+
+
+
