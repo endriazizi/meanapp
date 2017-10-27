@@ -142,6 +142,28 @@ db.customers.insert(
 
 
 
+EXAMPLE
+
+{
+	first_name:"Endri",
+	last_name:"Azizi",
+	memberships:["mem1", "mem2"],
+	address:{
+			street:"via Torino",
+			city:"Milano"
+	},
+	contact:[
+			{name:"Brad", relationship:"friend"},
+			{name:"Mario", relationship:"sister"},
+			{address:{
+			street:"via Torino",
+			city:"Milano"
+			}}
+	]	
+}
+
+
+
 
 
 
