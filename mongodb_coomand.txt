@@ -165,5 +165,13 @@ EXAMPLE
 
 
 
+/* var promise = mongoose.connect('mongodb://localhost:27017/meanauth', {
+    useMongoClient: true,
+ 
+  }); */
+
+
+
+
 
 

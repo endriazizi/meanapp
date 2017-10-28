@@ -8,20 +8,18 @@ const mongoose = require('mongoose');
 //import config db and jwt secret
 const config = require('./config/database');
 
-/* module.exports = {
-    //port:27017 is mongodb default port
-    database: 'mongodb://localhost27017/meanauth',
-    //for jwt auth
-    secret: 'your secret'
-} */
 
 //Mongodb Connection
-mongoose.connect('config.databse');
+mongoose.connect(config.database, { useMongoClient: true });
 
-//to check if we are connected
-//21:57 2
+// On Connection
 mongoose.connection.on('connected', () => {
-    console.log('Connected to database ' +config.database);
+    console.log('Connected to database '+config.database);
+});
+  
+// On Error
+mongoose.connection.on('error', (err) => {
+   console.log('Database error: '+err);
 });
 
 //initialiaze our app variable with express
@@ -55,7 +53,7 @@ app.get('/', (req, res)=>{
 //LUNCH THE SERVER by prompt: npm start
 //arrow function
 app.listen(port, () => {
-    console.log('Server started on port ' + port); //npm start
+    console.log('Server started: http://localhost:3000 on port  ' + port); //npm start
 });
 
 //callback with arrow function
