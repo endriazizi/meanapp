@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -16,6 +16,9 @@
     "mongoose": "*",
     "passport": "*",
     "passport-jwt": "*"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
   },
   "author": "Endri Azizi",
   "license": "ISC"

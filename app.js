@@ -8,7 +8,10 @@ const mongoose = require('mongoose');
 //import config db and jwt secret
 const config = require('./config/database');
 
-
+//ro remove warning: 
+/*(node:16564) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library
+instead: http://mongoosejs.com/docs/promises.html */
+mongoose.Promise = global.Promise;
 //Mongodb Connection
 mongoose.connect(config.database, { useMongoClient: true });
 
@@ -41,6 +44,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //Bosy parser enabled
 app.use(bodyParser.json());
+
+//Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+//now we need a strategy, chech npm passport-jwt strategy
+require('./config/passport')(passport);
+
 
 //redirect to whatver path is like localhost:3000/users/whatever_route
 app.use('/users', users);
