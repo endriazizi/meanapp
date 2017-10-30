@@ -37,6 +37,8 @@ app.use(cors());
 //Set Static Folder called public in my case or you we can called client because is rferred to frontend
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
 //Bosy parser enabled
 app.use(bodyParser.json());
 
