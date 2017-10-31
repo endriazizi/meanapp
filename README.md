@@ -104,6 +104,8 @@ Angular4 Frontend:
     
     http://localhost:4200
 
+    
+
 CREATE COMPONENT USING ANGULAR CLI
 
     ng g component navbar
@@ -117,6 +119,10 @@ CREATE COMPONENT USING ANGULAR CLI
     ng g component dashboard
 
     ng g component profile
+
+      //theme bootstrap
+      https://bootswatch.com/
+  <link rel='https://bootswatch.com/sandstone/bootstrap.min.css'>
 
 
 ## Some links for more in depth learning
