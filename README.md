@@ -104,6 +104,10 @@ Angular4 Frontend:
     
     http://localhost:4200
 
+CREATE COMPONENT USING ANGULAR CLI
+
+    ng g component navbar
+
 
 ## Some links for more in depth learning
 ### Hands on / interactive learning
