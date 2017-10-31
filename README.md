@@ -108,6 +108,16 @@ CREATE COMPONENT USING ANGULAR CLI
 
     ng g component navbar
 
+    ng g component login
+
+    ng g component register
+
+    ng g component home
+
+    ng g component dashboard
+
+    ng g component profile
+
 
 ## Some links for more in depth learning
 ### Hands on / interactive learning
