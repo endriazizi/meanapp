@@ -100,6 +100,10 @@ Angular4 Frontend:
 
     ng new MeanAppAngular4
 
+    change di dir on angular-cli.json
+    
+    http://localhost:4200
+
 
 ## Some links for more in depth learning
 ### Hands on / interactive learning
