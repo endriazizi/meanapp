@@ -2,11 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 //Routes Module
 import {RouterModule, Routes} from '@angular/router';
 
 
 import { AppComponent } from './app.component';
+
 //new import component 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -15,7 +17,12 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+//serivces import
+import { ValidateService } from './services/validate.service';
 
+//flash messages
+import { FlashMessagesModule } from 'angular2-flash-messages';
+      
 const appRoutes: Routes = [
 {path:'', component: HomeComponent},
 {path:'register', component: RegisterComponent},
@@ -40,9 +47,12 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     //routes module
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    //flashmessages
+    FlashMessagesModule
   ],
-  providers: [],
+  //services into provider
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

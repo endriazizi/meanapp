@@ -124,6 +124,17 @@ CREATE COMPONENT USING ANGULAR CLI
       https://bootswatch.com/
   <link rel='https://bootswatch.com/sandstone/bootstrap.min.css'>
 
+    //SERVICES
+
+    ng g service validate
+
+    npm install angular2-flash-messages --save
+
+    //USEFUL:
+    npm uninstall -g angular-cli @angular/cli
+    npm cache clean
+    npm install -g @angular/cli@latest
+
 
 ## Some links for more in depth learning
 ### Hands on / interactive learning
